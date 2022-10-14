@@ -7,4 +7,10 @@
     <page_footer>
         <p>Ingeniería de Software - [[page_cu]]</p>
     </page_footer>
+
+    <ul>
+        <?php foreach($programas as $programa): ?>
+            <li><?= $programa?></li>
+        <?php endforeach?>
+    </ul>
 </page>

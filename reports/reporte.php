@@ -13,6 +13,8 @@ try{
   $destinatario = "Hwang Hyunjin";  
   $cargo = "Integrante de Stray Kids";
 
+  $programas = ["Visual Studio Code", "Android Studio", "MS SQL Server"];
+
   ob_start();
 
   $data = "";

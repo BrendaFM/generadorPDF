@@ -21,3 +21,24 @@ END $$
 
 CALL spu_ubigeos_buscar('Pueblo');
 
+CREATE TABLE comentarios (
+	idcomentario 		INT 		AUTO_INCREMENT PRIMARY KEY,
+	comentario		TEXT 		NOT NULL,
+	fechacomentario 	DATETIME 	DEFAULT NOW()
+)ENGINE=INNODB;
+
+DELIMITER$$
+CREATE PROCEDURE spu_comentario_registrar(IN _comentario TEXT)
+BEGIN
+	INSERT INTO comentarios (comentario) VALUES(_comentario);
+END$$
+
+CALL spu_comentario_registrar('<p>Hola Mundo</p>');
+CALL spu_comentario_registrar('<strong>SENATI</strong>');
+
+DELIMITER$$
+CREATE PROCEDURE spu_comentario_ultimo()
+BEGIN
+	SELECT * FROM comentarios ORDER BY idcomentario DESC LIMIT 1; 
+END$$
+

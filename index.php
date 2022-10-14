@@ -16,6 +16,7 @@
 
         <a href="views/autocompletado.php" class="btn btn-info">Buscador asincrono con BD</a>
         <a href="views/generadorqr.php" class="btn btn-info">Generar QR</a>
+        <a href="reports/reporte.php" class="btn btn-info">Reporte</a>
 
     </div>
 </body>
