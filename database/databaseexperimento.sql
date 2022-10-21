@@ -42,3 +42,6 @@ BEGIN
 	SELECT * FROM comentarios ORDER BY idcomentario DESC LIMIT 1; 
 END$$
 
+CREATE VIEW vista_user_details_full
+AS
+SELECT user_id, username, first_name, last_name, gender FROM user_details; 
