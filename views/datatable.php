@@ -19,7 +19,7 @@
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Género</th>
-                    <th>Operación</th>
+                    <th>Operacion</th>
                 </tr>
             </thead>
             <tbody>

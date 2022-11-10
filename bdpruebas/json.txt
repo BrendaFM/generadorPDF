@@ -1,0 +1,23 @@
+-- Active: 1668121976626@@127.0.0.1@3306@experimentos
+select * from ubigeos;
+
+-- mostrar parte del JSON
+SELECT  nombre, 
+        JSON_EXTRACT(especificaciones, "$.capacidad") as "capacidad" 
+    from equipos;
+
+select nombre,
+        JSON_EXTRACT(especificaciones, "$.ram") as "Ram"
+    from equipos;
+
+INSERT INTO equipos (nombre, precio, garantia, especificaciones) VALUES
+	('LG Power', 1500, 12, '{"colores": ["negro", "blanco", "azul"]}');
+
+-- recuperar colores
+select nombre,
+        JSON_EXTRACT(especificaciones, "$.colores[2]") as "Ram"
+    from equipos
+    where idequipo = 2;
+
+UPDATE equipos SET especificaciones = json_replace(especificaciones, '$.colores[2]', 'Gold')
+	WHERE idequipo = 2;

@@ -45,3 +45,19 @@ END$$
 CREATE VIEW vista_user_details_full
 AS
 SELECT user_id, username, first_name, last_name, gender FROM user_details; 
+
+-- -----------------------
+CREATE TABLE equipos
+(
+	idequipo		INT 		AUTO_INCREMENT PRIMARY KEY,	
+	nombre   		VARCHAR(30)	NOT NULL,
+	precio 			DECIMAL(7,2) 	NOT NULL,
+	garantia 		TINYINT 	NOT NULL,
+	especificaciones 	JSON 		NULL
+)ENGINE = INNODB;
+
+SELECT * FROM equipos
+
+INSERT INTO equipos (nombre, precio, garantia, especificaciones) VALUES
+	('Samsung Galaxy S3', 1200.00, 12, '{"capacidad":512, "ram": 1024}');
+
